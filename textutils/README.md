@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Text Utils
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Welcome to Text Utils! This website is designed to make text manipulation and analysis simple and efficient. Whether you need to convert text to different cases, copy text, preview it, or count words, Text Utils has got you covered. With a user-friendly interface and support for both dark and light modes, it's the perfect tool for all your text-related needs.
 
-In the project directory, you can run:
+![Main Page](./src/Images/MainPage.png);
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **To Uppercase**: Transform your text to uppercase quickly. Perfect for highlighting important content.
+![Main Page](./src/Images/Uppercase.png);
 
-### `npm test`
+- **To Lowercase**: Easily convert your text to lowercase with a single click. Ideal for standardizing text.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Main Page](./src/Images/Lowercase.png);
 
-### `npm run build`
+- **Copy**: Copy the text to your clipboard effortlessly, so you can paste it wherever you need.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Main Page](./src/Images/Features.png);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Word Count
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Automatically count the number of words in your text to help you keep track of content length.
 
-### `npm run eject`
+![Main Page](./src/Images/TextSummary.png);
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Preview
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+See a live preview of your text changes in real-time, ensuring you get exactly what you want.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Main Page](./src/Images/Preview.png);
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## About Us
 
-## Learn More
+At Text Utils, we are dedicated to providing simple yet powerful tools to streamline your text management tasks. Our team believes in making text manipulation as straightforward as possible, so you can focus on what matters most. Thank you for using our tools, and we hope they make your work easier!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Main Page](./src/Images/AboutUs.png);
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Dark Mode / Light Mode
 
-### Code Splitting
+Our website supports both dark and light modes to ensure a comfortable reading experience. Switch between modes based on your preference or lighting conditions to reduce eye strain and enhance visibility.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Main Page](./src/Images/DarkMode.png);
