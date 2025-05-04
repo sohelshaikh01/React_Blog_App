@@ -2,6 +2,9 @@
 
 This App Contains Blog Postings with Integrating Appwrite as the Backend
 
+## Preview
+
+<img src="./public/home-blog-app.jpg" alt="Login Page" width="100%">
 
 ## Improvement in This App
     Store Data content / posts in Local Storage
