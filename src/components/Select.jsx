@@ -28,5 +28,4 @@ const Select = ({
   )
 }
 
-// Similar to Input component
 export default React.forwardRef(Select);

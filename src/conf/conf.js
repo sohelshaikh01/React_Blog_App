@@ -8,7 +8,12 @@ const conf = {
 
     appwriteCollectionId: String(import.meta.env.VITE_APPWRITE_COLLECTION_ID),
 
-    appwriteBucketId: String(import.meta.env.VITE_APPWRITE_BUCKET_ID)
+    appwriteBucketId: String(import.meta.env.VITE_APPWRITE_BUCKET_ID),
+
+    cloudinaryName: String(import.meta.env.VITE_CLOUDINARY_CLOUD_NAME),
+
+    cloudinaryUploadPreset: String(import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESENT),
+
 }
 
 export default conf;

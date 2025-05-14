@@ -10,10 +10,10 @@ import { Button, Container } from "../components";
 const Post = () => {
 	const [post, setPost] = useState(null);
 	const { slug } = useParams();
-	const { navigate } = useNavigate();
-	
+	const navigate = useNavigate();
+
+
 	const userData = useSelector((state) => state.auth.userData);
-	
 	const isAuthor = post && userData ? post.userId === userData.$id : false;
 
 	useEffect(() => {
@@ -40,7 +40,7 @@ const Post = () => {
 			<Container>
 				<div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
 					<img
-						src={appwriteService.getFilePreview(post.featuredImage)}
+						src={post.featuredImage}
 						alt={post.title}
 						className="rounded-xl"
 					/>

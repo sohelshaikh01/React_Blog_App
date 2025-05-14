@@ -4,9 +4,7 @@ import appwriteService from "../appwrite/config";
 
 const PostCard = ({ $id = "N/A", title = "Untitled", content = "", featuredImage }) => {
     
-    const imageUrl = featuredImage
-        ? appwriteService.getFilePreview(featuredImage).then(img => console.log(img))
-        : "/placeholder.jpg";
+    const imageUrl = featuredImage;
     // Image Loading is not Included in this plan.
 
     return (

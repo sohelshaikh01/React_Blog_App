@@ -4,11 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import appwriteService from "../../appwrite/config";
+import conf from "../../conf/conf";
 
 import { useForm } from "react-hook-form";
 import { Button, Input, RTE, Select } from "..";
 
 export default function PostForm({ post }) {
+
+
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
             title: post?.title || "",
@@ -21,9 +24,37 @@ export default function PostForm({ post }) {
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
 
+
+    const uploadToCloudinary = async (file) => {
+        const cloudName = conf.cloudinaryName;
+        const uploadPreset = conf.cloudinaryUploadPreset;
+      
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", uploadPreset);
+        formData.append("cloud_name", cloudName);
+        
+        try {
+            const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await res.json();
+            return data.url;
+
+        } catch (error) {
+            console.log("Error while uploading to cloudinary", error);
+        }
+
+        return null;     
+        
+    };
+      
+
     const submit = async (data) => {
         if (post) {
-            const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
+            const file = data.image[0] ? await uploadToCloudinary(data.image[0]) : null;
 
             if (file) {
                 appwriteService.deleteFile(post.featuredImage);
@@ -31,17 +62,17 @@ export default function PostForm({ post }) {
 
             const dbPost = await appwriteService.updatePost(post.$id, {
                 ...data,
-                featuredImage: file ? file.$id : undefined,
+                featuredImage: file ? file : undefined,
             });
 
             if (dbPost) {
                 navigate(`/post/${dbPost.$id}`);
             }
         } else {
-            const file = await appwriteService.uploadFile(data.image[0]);
+            const file = await uploadToCloudinary(data.image[0]);
 
             if (file) {
-                const fileId = file.$id;
+                const fileId = file;
                 data.featuredImage = fileId;
                 const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
 
@@ -82,6 +113,7 @@ export default function PostForm({ post }) {
                     className="mb-4"
                     {...register("title", { required: true })}
                 />
+
                 <Input
                     label="Slug :"
                     placeholder="Slug"
@@ -91,8 +123,11 @@ export default function PostForm({ post }) {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
                 />
+
                 <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
+
             </div>
+
             <div className="w-1/3 px-2">
                 <Input
                     label="Feature Image :"
@@ -104,7 +139,7 @@ export default function PostForm({ post }) {
                 {post && (
                     <div className="w-full mb-4">
                         <img
-                            src={appwriteService.getFilePreview(post.featuredImage)}
+                            src={post.featuredImage}
                             alt={post.title}
                             className="rounded-lg"
                         />
@@ -120,6 +155,7 @@ export default function PostForm({ post }) {
                     {post ? "Update" : "Submit"}
                 </Button>
             </div>
+            
         </form>
     );
 }

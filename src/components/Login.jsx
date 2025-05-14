@@ -61,11 +61,7 @@ const Login = () => {
 
         <form onSubmit={handleSubmit(login)} className="mt-8">
           <div className="space-y-5">
-            <Input label="Email:" 
-              placeholder="Enter your email"
-              autoComplete="Email" 
-              type="email" 
-              {...register("email", {
+            <Input label="Email:"  placeholder="Enter your email" autoComplete="Email"  type="email"  {...register("email", {
                 required: true,
                 validate: { // can spelling error occurs = 'matchPatern' Original
                   matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
@@ -75,11 +71,7 @@ const Login = () => {
 
             {/* email is to uniquely identify goes as it is in data above */}
 
-            <Input label="Password:"
-              placeholder="Enter your password"
-              autoComplete="Password"
-              type="password" 
-              {...register("password", {
+            <Input label="Password:" placeholder="Enter your password" autoComplete="Password" type="password"  {...register("password", {
                 required: true
              })} />
 

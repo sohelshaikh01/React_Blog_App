@@ -17,3 +17,5 @@ This App Contains Blog Postings with Integrating Appwrite as the Backend
 - Can Create Like Blog Site
     Where People see all Blogs, Watch Reads and Likes
     Analytics to Control, Hide Blogs
+
+

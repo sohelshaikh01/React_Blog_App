@@ -57,19 +57,12 @@ const Signup = () => {
 
         <form onSubmit={handleSubmit(create)}>
             <div className="space-y-5">
-                <Input label="Full Name:"
-                autoComplete="Name"
-                type="text" 
-                placeholder="Enter your full name" 
-                {...register("name", {
+                
+                <Input label="Full Name:" autoComplete="Name" type="text"  placeholder="Enter your full name"  {...register("name", {
                     required: true,
                 })} />
 
-                <Input label="Email:" 
-                placeholder="Enter your Email"
-                autoComplete="Email" 
-                type="email" 
-                {...register("email", {
+                <Input label="Email:"  placeholder="Enter your Email" autoComplete="Email"  type="email"  {...register("email", {
                     required: true,
                     validate: { // can spelling error occurs = 'matchPatern' Original
                         matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
@@ -77,11 +70,7 @@ const Signup = () => {
                     }
                 })} />
 
-                <Input label="Password:"
-                placeholder="Enter your password"
-                autoComplete="Password"
-                type="password" 
-                {...register("password", {
+                <Input label="Password:" placeholder="Enter your password" autoComplete="Password" type="password"  {...register("password", {
                     required: true
                 })} />
 
