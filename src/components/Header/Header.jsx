@@ -43,19 +43,19 @@ const Header = () => {
      <header className="py-3 shadow bg-gray-500">
       <Container>
         <nav className="flex">
-          <div className="mr-4 my-auto font-semibold text-xl">
+          <div className="mx-4 my-auto font-semibold text-xl">
             <Link to="/">
-             <Logo width="70px" />
+             <Logo width="40px" />
             </Link>
           </div>
 
           <ul className='flex ml-auto'>
             { navItems.map((item) => 
               item.active ? (
-                <li key={item.name} className="mx-2">
+                <li key={item.name} className="mx-1 sm:mx-2 list-none font-medium sm:font-semibold">
 
                   <button onClick={() => navigate(item.slug)}
-                    className='inline-block px-6 py-2 duration-200 font-semibold hover:bg-blue-100 rounded-full'>
+                    className='inline-block px-3 py-1 sm:py-2 sm:px-6 duration-200  hover:bg-blue-100 rounded-full'>
                     {item.name}
                   </button>
                 </li>
@@ -63,7 +63,7 @@ const Header = () => {
 
             )}  
             {authStatus && (
-              <li className="list-none font-semibold ">
+              <li className="list-none font-semibold mx-1 sm:mx-2">
                 <LogoutBtn/>
               </li>
             )}

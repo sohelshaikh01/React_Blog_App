@@ -9,7 +9,7 @@ const PostCard = ({ $id = "N/A", title = "Untitled", content = "", featuredImage
 
     return (
         <Link to={`/post/${$id}`} className="w-40 h-56">
-            <div className="w-full bg-slate-200 border text-gray-800 border-slate-400 rounded-xl p-4">
+            <div className="w-full bg-slate-200 border text-gray-800 border-slate-400 rounded-xl p-2 sm:p-4">
                 {featuredImage && (
                     <img
                         src={imageUrl}

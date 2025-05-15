@@ -17,8 +17,8 @@ const AllPosts = () => {
 
     if (posts.length === 0) {
         return (
-            <div className="w-full py-8 text-center">
-                <Container>
+            <div className="w-full py-4 sm:py-8 text-center">
+                <Container className="p-2">
                     { login ? (
                         <h1 className="text-2xl font-bold">Create Posts to read. </h1>
                     ) : (
@@ -30,11 +30,11 @@ const AllPosts = () => {
     }
 
     return (
-        <div className="w-full py-8">
+        <div className="w-full py-4 sm:py-8">
             <Container>
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap flex-col sm:flex-row">
                     {posts.map((post) => (
-                        <div key={post.$id} className="p-2 w-1/4">
+                        <div key={post.$id} className="p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
                             <PostCard {...post} />
                         </div>
                     ))}

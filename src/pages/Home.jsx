@@ -5,6 +5,7 @@ import appwriteService from "../appwrite/config";
 import { Container, PostCard } from "../components";
 
 const Home = () => {
+
     const [posts, setPosts] = useState([]);
     const login = useSelector((state) => state.auth.userData);
 
@@ -23,8 +24,9 @@ const Home = () => {
     }, []);
 
     if (posts.length === 0) {
+
         return (
-            <div className="w-full py-8 mt-4 text-center">
+            <div className="w-full py-4 sm:py-8 text-center">
                 <Container>
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full">
@@ -45,13 +47,13 @@ const Home = () => {
     }
 
     return (
-        <div className="w-full py-8">
+        <div className="w-full py-4 sm:py-8">
             <Container>
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap flex-col sm:flex-row">
                     {posts
                         .filter((post) => post?.$id) // Ensure valid posts
                         .map((post) => (
-                            <div key={post.$id} className="p-2 w-1/4">
+                            <div key={post.$id} className="p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
                                 <PostCard {...post} />
                             </div>
                         ))}

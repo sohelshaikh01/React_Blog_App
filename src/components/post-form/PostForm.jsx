@@ -9,8 +9,8 @@ import conf from "../../conf/conf";
 import { useForm } from "react-hook-form";
 import { Button, Input, RTE, Select } from "..";
 
-export default function PostForm({ post }) {
 
+export default function PostForm({ post }) {
 
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
@@ -106,7 +106,8 @@ export default function PostForm({ post }) {
 
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-            <div className="w-2/3 px-2">
+            <div className="w-full sm:w-2/3 px-2 mb-4 sm:mb-0">
+
                 <Input
                     label="Title :"
                     placeholder="Title"
@@ -128,7 +129,7 @@ export default function PostForm({ post }) {
 
             </div>
 
-            <div className="w-1/3 px-2">
+            <div className="w-full sm:w-1/3 px-2">
                 <Input
                     label="Feature Image :"
                     type="file"
@@ -154,8 +155,9 @@ export default function PostForm({ post }) {
                 <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
                     {post ? "Update" : "Submit"}
                 </Button>
+
             </div>
-            
         </form>
+
     );
 }

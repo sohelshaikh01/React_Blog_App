@@ -36,35 +36,37 @@ const Post = () => {
 
 	return post ? (
 		
-		<div className="py-8">
+		<div className="py-4 sm:py-8">
 			<Container>
-				<div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+
+				<div className="w-full flex justify-center mb-4 relative border rounded-md sm:rounded-xl p-2">
 					<img
 						src={post.featuredImage}
 						alt={post.title}
-						className="rounded-xl"
+						className="rounded-md sm:rounded-xl w-full h-auto md:w-[70%] md:h-[70%] "
 					/>
 
 					{isAuthor && (
-						<div className="absolute right-6 top-6">
+						<div className="absolute right-4 top-4">
 							<Link to={`/edit-post/${post.$id}`}>
-								<Button bgColor="bg-green-500" className="mr-3">
+								<Button bgColor="bg-green-500 px-3 py-1 sm:px-6 sm:py-2" className="mr-3">
 									Edit
 								</Button>
 							</Link>
-							<Button bgColor="bg-red-500" onClick={deletePost}>
+							<Button bgColor="bg-red-500 px-3 py-1 sm:px-6 sm:py-2" onClick={deletePost}>
 								Delete
 							</Button>
 						</div>
 					)}
 				</div>
 
-				<div className="w-full mb-6">
-					<h1 className="text-2xl font-bold">{post.title}</h1>
+				<div className="w-full mb-4 sm:mb-6">
+					<h1 className="text-xl sm:text-2xl font-bold">{post.title}</h1>
 				</div>
-				<div className="browser-css">
+				<div className="browser-css text-base">
 					{parse(post.content)}
 				</div>
+
 			</Container>
 		</div>
 

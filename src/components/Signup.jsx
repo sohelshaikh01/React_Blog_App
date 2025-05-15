@@ -36,15 +36,15 @@ const Signup = () => {
 
   return (
     <div className="flex items-center justify-center w-full">
-    <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}> 
+    <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-6 sm:p-10 border border-black/10`}> 
 
         <div className="mb-2 flex justify-center">
-            <span className='inline-block w-full max-w-[100px]'>
+            <span className='inline-block w-full text-center max-w-[100px]'>
             <Logo width="100px" />
             </span>
         </div>
 
-        <h2 className="text-center text-2xl font-bold leading-tight">  Sign up to create your account </h2>
+        <h2 className="text-center text-xl sm:text-2xl font-bold leading-tight">  Sign up to create your account </h2>
 
         <p className="mt-2 text-center text-base text-black/60">
             Already have an account?&nbsp; 
@@ -55,8 +55,8 @@ const Signup = () => {
 
         {error && <p className="text-red-600 mt-8 text-center"> {error} </p>}
 
-        <form onSubmit={handleSubmit(create)}>
-            <div className="space-y-5">
+        <form onSubmit={handleSubmit(create)} className="mt-6 sm:mt-8">
+            <div className="space-y-3 sm:space-y-5">
                 
                 <Input label="Full Name:" autoComplete="Name" type="text"  placeholder="Enter your full name"  {...register("name", {
                     required: true,
